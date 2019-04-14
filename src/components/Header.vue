@@ -10,7 +10,7 @@
                     <router-link to="/portfolio" activeClass="active" tag="li"><a>Portfolio</a></router-link>
                     <router-link to="/stocks" activeClass="active" tag="li"><a>Stocks</a></router-link>
                 </ul>
-                <strong class="navbar-text navbar-right">Funds: {{ funds | currency }}</strong>
+                <strong class="navbar-text navbar-right">Funds: {{ funds }}</strong>
                 <ul class="nav navbar-nav navbar-right">
                     <li><a href="#" @click="endDay">End Day</a></li>
                     <li
@@ -46,7 +46,7 @@
         },
         computed: {
             funds() {
-                console.log('True')
+                return this.$store.getters.funds
             }
         },
         methods: {
